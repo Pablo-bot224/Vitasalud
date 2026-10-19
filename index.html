@@ -1,279 +1,821 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VitaSalud | Asesoría y Servicios de Bienestar</title>
+  <title>VitaSalud | Asesoría, Comparativa y Portales de Salud Integral</title>
+  <meta name="description" content="Portal independiente de asesoría y comparativa de servicios de salud, programas de nutrición y chequeos preventivos. Encuentra la solución de bienestar ideal para ti.">
   <style>
-    /* Estilos Generales y Resets */
+    /* VARIABLES Y RESETEO */
+    :root {
+      --primary-color: #0d9488;
+      --primary-hover: #0f766e;
+      --secondary-color: #1e293b;
+      --accent-color: #f59e0b;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #334155;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     }
+
     body {
-      color: #333;
+      background-color: var(--bg-light);
+      color: var(--text-main);
       line-height: 1.6;
-      background-color: #f8f9fa;
     }
+
     a {
       text-decoration: none;
       color: inherit;
     }
 
-    /* Header y Navegación */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* HEADER Y NAVEGACIÓN */
     header {
       background-color: #ffffff;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      border-bottom: 1px solid var(--border-color);
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: var(--shadow-sm);
     }
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
+
+    .nav-wrapper {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
+      padding: 1rem 0;
     }
+
     .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #008080;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--secondary-color);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
     }
+
     .logo span {
-      color: #2e8b57;
+      color: var(--primary-color);
     }
+
     nav ul {
       display: flex;
       list-style: none;
-      gap: 1.5rem;
-    }
-    nav a {
-      font-weight: 500;
-      color: #555;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #008080;
-    }
-    .btn-primary {
-      background-color: #008080;
-      color: #fff;
-      padding: 0.6rem 1.2rem;
-      border-radius: 5px;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .btn-primary:hover {
-      background-color: #006666;
+      gap: 1.8rem;
     }
 
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(135deg, #e0f2f1 0%, #ffffff 100%);
-      padding: 4rem 2rem;
+    nav a {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--primary-color);
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      color: #ffffff;
+      padding: 0.65rem 1.4rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s;
+      display: inline-block;
       text-align: center;
     }
-    .hero-content {
-      max-width: 800px;
-      margin: 0 auto;
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
     }
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: #1a365d;
+
+    .btn-outline {
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+      padding: 0.6rem 1.3rem;
+      border-radius: 6px;
+      font-weight: 600;
+      background: transparent;
+      transition: all 0.2s;
     }
-    .hero p {
-      font-size: 1.1rem;
-      color: #666;
+
+    .btn-outline:hover {
+      background-color: var(--primary-color);
+      color: #ffffff;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
+      padding: 4.5rem 0 3.5rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 2.6rem;
+      line-height: 1.25;
+      color: var(--secondary-color);
+      margin-bottom: 1.2rem;
+      font-weight: 800;
+    }
+
+    .hero-text p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
       margin-bottom: 2rem;
     }
 
-    /* Sección de Servicios / Tarjetas */
-    .services {
-      max-width: 1200px;
-      margin: 4rem auto;
-      padding: 0 2rem;
+    .stats-bar {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(0,0,0,0.08);
     }
-    .section-title {
+
+    .stat-item h4 {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+
+    .stat-item p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    .hero-card {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-color);
+    }
+
+    .hero-card h3 {
+      font-size: 1.3rem;
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+    }
+
+    /* SECCIÓN DE SERVICIOS / COMPARATIVA */
+    .section-padding {
+      padding: 4.5rem 0;
+    }
+
+    .section-header {
       text-align: center;
-      margin-bottom: 3rem;
+      max-width: 700px;
+      margin: 0 auto 3rem auto;
     }
-    .section-title h2 {
-      font-size: 2rem;
-      color: #1a365d;
+
+    .section-header h2 {
+      font-size: 2.2rem;
+      color: var(--secondary-color);
+      margin-bottom: 0.8rem;
     }
-    .grid {
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
     }
+
     .card {
-      background: #fff;
-      border-radius: 8px;
+      background-color: var(--card-bg);
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
       padding: 2rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      transition: transform 0.3s;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
+
     .card:hover {
-      transform: translateY(-5px);
-    }
-    .card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-      color: #008080;
-    }
-    .card p {
-      color: #666;
-      margin-bottom: 1.5rem;
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
     }
 
-    /* Formulario de Contacto / Cotizador */
-    .contact-section {
+    .badge {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background-color: var(--accent-color);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      text-transform: uppercase;
+    }
+
+    .card-title {
+      font-size: 1.4rem;
+      color: var(--secondary-color);
+      margin-bottom: 0.8rem;
+    }
+
+    .card-price {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .card-price span {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .card-features {
+      list-style: none;
+      margin-bottom: 1.8rem;
+    }
+
+    .card-features li {
+      padding: 0.5rem 0;
+      border-bottom: 1px dashed var(--border-color);
+      font-size: 0.95rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-features li::before {
+      content: "✓";
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    /* SECCIÓN POR QUÉ ELEGIRNOS */
+    .why-us {
       background-color: #ffffff;
-      padding: 4rem 2rem;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.02);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
     }
-    .form-container {
-      max-width: 600px;
-      margin: 0 auto;
-      background: #f8f9fa;
-      padding: 2rem;
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-box {
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      background-color: #ccfbf1;
+      color: var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.2rem auto;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .feature-box h3 {
+      font-size: 1.2rem;
+      color: var(--secondary-color);
+      margin-bottom: 0.6rem;
+    }
+
+    .feature-box p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* BLOG / ARTÍCULOS INFORMATIVOS (CLAVE PARA ADSENSE) */
+    .blog-section {
+      background-color: var(--bg-light);
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .blog-card {
+      background: #ffffff;
       border-radius: 8px;
-      border: 1px solid #e2e8f0;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
     }
+
+    .blog-content {
+      padding: 1.5rem;
+    }
+
+    .blog-tag {
+      font-size: 0.75rem;
+      color: var(--primary-color);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .blog-card h3 {
+      font-size: 1.2rem;
+      color: var(--secondary-color);
+      margin: 0.5rem 0 0.8rem 0;
+    }
+
+    .blog-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .read-more {
+      color: var(--primary-color);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* PREGUNTAS FRECUENTES (FAQ) */
+    .faq-section {
+      background-color: #ffffff;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border-color);
+      padding: 1.2rem 0;
+    }
+
+    .faq-question {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--secondary-color);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-answer {
+      margin-top: 0.8rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* FORMULARIO DE CONTACTO */
+    .contact-container {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2.5rem;
+      max-width: 650px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-md);
+    }
+
     .form-group {
       margin-bottom: 1.2rem;
     }
+
     .form-group label {
       display: block;
-      margin-bottom: 0.5rem;
       font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+      color: var(--secondary-color);
     }
-    .form-group input, .form-group select, .form-group textarea {
+
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea {
       width: 100%;
       padding: 0.75rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus, 
+    .form-group select:focus, 
+    .form-group textarea:focus {
+      border-color: var(--primary-color);
+    }
+
+    /* FOOTER Y AVISOS LEGALES */
+    footer {
+      background-color: var(--secondary-color);
+      color: #94a3b8;
+      padding: 3.5rem 0 2rem 0;
+      font-size: 0.9rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-brand h3 {
+      color: #ffffff;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links h4 {
+      color: #ffffff;
+      margin-bottom: 1rem;
       font-size: 1rem;
     }
 
-    /* Footer */
-    footer {
-      background-color: #1a365d;
-      color: #fff;
-      padding: 2rem;
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
+    }
+
+    .disclaimer {
+      border-top: 1px solid #334155;
+      padding-top: 1.5rem;
+      font-size: 0.8rem;
       text-align: center;
-      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #64748b;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 768px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav ul {
+        display: none; /* Simplificado para móviles */
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Encabezado -->
+  <!-- NAVEGACIÓN PRINCIPAL -->
   <header>
-    <div class="nav-container">
-      <div class="logo">Vita<span>Salud</span></div>
+    <div class="container nav-wrapper">
+      <a href="#" class="logo">Vita<span>Salud</span></a>
       <nav>
         <ul>
           <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#comparativa">Comparador</a></li>
+          <li><a href="#ventajas">Por qué VitaSalud</a></li>
+          <li><a href="#blog">Guías de Salud</a></li>
+          <li><a href="#faq">Preguntas Frecuentes</a></li>
         </ul>
       </nav>
-      <a href="#contacto" class="btn-primary">Pedir Información</a>
+      <a href="#contacto" class="btn-primary">Solicitar Asesoría</a>
     </div>
   </header>
 
-  <!-- Hero / Presentación -->
+  <!-- HERO PRINCIPAL -->
   <section class="hero" id="inicio">
-    <div class="hero-content">
-      <h1>Encuentra la solución de bienestar ideal para ti</h1>
-      <p>Asesoramiento personalizado en salud, nutrición y programas preventivos a tu medida.</p>
-      <a href="#servicios" class="btn-primary">Explorar Servicios</a>
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <h1>Asesoría Independiente y Soluciones de Salud a tu Medida</h1>
+        <p>Comparamos y seleccionamos las mejores opciones de atención preventiva, nutrición especializada y planes corporativos para ti y tu familia.</p>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <a href="#comparativa" class="btn-primary">Ver Comparativa</a>
+          <a href="#ventajas" class="btn-outline">Cómo Funciona</a>
+        </div>
+        <div class="stats-bar">
+          <div class="stat-item">
+            <h4>+12.000</h4>
+            <p>Usuarios asesorados</p>
+          </div>
+          <div class="stat-item">
+            <h4>100%</h4>
+            <p>Análisis independiente</p>
+          </div>
+          <div class="stat-item">
+            <h4>4.9/5</h4>
+            <p>Valoración promedio</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="hero-card">
+        <h3>Encuentra la mejor opción en 2 minutos</h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.2rem;">Responde unas breves preguntas para recibir una recomendación personalizada sin compromiso.</p>
+        <form onsubmit="event.preventDefault(); alert('Gracias. Un asesor revisará tu perfil.');">
+          <div class="form-group">
+            <label>¿Qué servicio buscas?</label>
+            <select required>
+              <option value="">Selecciona una opción</option>
+              <option value="nutricion">Plan de Nutrición y Hábitos</option>
+              <option value="preventivo">Chequeos Preventivos Integrales</option>
+              <option value="empresa">Bienestar para Empresas</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Rango de edad</label>
+            <select required>
+              <option value="18-30">18 - 30 años</option>
+              <option value="31-50">31 - 50 años</option>
+              <option value="50+">Más de 50 años</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary" style="width: 100%;">Comparar Ahora</button>
+        </form>
+      </div>
     </div>
   </section>
 
-  <!-- Servicios / Planes -->
-  <section class="services" id="servicios">
-    <div class="section-title">
-      <h2>Nuestros Servicios Destacados</h2>
-      <p>Soluciones adaptadas a cada etapa de tu vida</p>
-    </div>
-    <div class="grid">
-      <div class="card">
-        <div>
-          <h3>Nutrición Personalizada</h3>
-          <p>Planes nutricionales adaptados a tus metas de salud y estilo de vida con seguimiento experto.</p>
-        </div>
-        <a href="#contacto" class="btn-primary" style="text-align: center;">Saber Más</a>
+  <!-- COMPARATIVA DE PLANES Y SERVICIOS -->
+  <section class="section-padding" id="comparativa">
+    <div class="container">
+      <div class="section-header">
+        <h2>Planes y Soluciones Destacadas</h2>
+        <p>Analizamos las alternativas más completas del sector para ofrecerte una visión clara, transparente y adaptada a tus necesidades individuales.</p>
       </div>
-      <div class="card">
-        <div>
-          <h3>Chequeos Preventive Pro</h3>
-          <p>Programas integrales de evaluación de salud preventiva para detectar y mitigar riesgos a tiempo.</p>
+
+      <div class="cards-grid">
+        <!-- Tarjeta 1 -->
+        <div class="card">
+          <span class="badge">MÁS POPULAR</span>
+          <div>
+            <h3 class="card-title">Nutrición & Estilo de Vida</h3>
+            <div class="card-price">Desde 29€ <span>/ mes</span></div>
+            <ul class="card-features">
+              <li>Valoración nutricional inicial completa</li>
+              <li>Diseño de menús 100% personalizados</li>
+              <li>Seguimiento bisemanal con especialista</li>
+              <li>Acceso a app de recetas y hábitos</li>
+            </ul>
+          </div>
+          <a href="#contacto" class="btn-primary">Solicitar Información</a>
         </div>
-        <a href="#contacto" class="btn-primary" style="text-align: center;">Saber Más</a>
-      </div>
-      <div class="card">
-        <div>
-          <h3>Bienestar Corporativo</h3>
-          <p>Programas de salud integral para equipos de trabajo que aumentan la productividad y reducen el estrés.</p>
+
+        <!-- Tarjeta 2 -->
+        <div class="card">
+          <span class="badge" style="background-color: #0284c7;">PREVENCIÓN</span>
+          <div>
+            <h3 class="card-title">Chequeo Preventivo Pro</h3>
+            <div class="card-price">Desde 149€ <span>/ evaluación</span></div>
+            <ul class="card-features">
+              <li>Analítica de sangre y perfil metabólico</li>
+              <li>Evaluación cardiovascular preventiva</li>
+              <li>Informe médico detallado e interpretado</li>
+              <li>Consulta de cierre con médico general</li>
+            </ul>
+          </div>
+          <a href="#contacto" class="btn-outline">Ver Detalle del Plan</a>
         </div>
-        <a href="#contacto" class="btn-primary" style="text-align: center;">Saber Más</a>
+
+        <!-- Tarjeta 3 -->
+        <div class="card">
+          <span class="badge" style="background-color: #4f46e5;">EMPRESAS</span>
+          <div>
+            <h3 class="card-title">Bienestar Corporativo</h3>
+            <div class="card-price">A medida <span>/ equipo</span></div>
+            <ul class="card-features">
+              <li>Talleres de gestión del estrés y ergonomía</li>
+              <li>Campañas de vacunación e higiene postural</li>
+              <li>Planes de nutrición para empleados</li>
+              <li>Métricas de impacto y reducción de bajas</li>
+            </ul>
+          </div>
+          <a href="#contacto" class="btn-primary">Pedir Presupuesto</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Formulario de Consulta -->
-  <section class="contact-section" id="contacto">
-    <div class="section-title">
-      <h2>Solicita una Asesoría Gratuita</h2>
-      <p>Déjanos tus datos y un especialista se pondrá en contacto contigo.</p>
-    </div>
-    <div class="form-container">
-      <form id="contactForm">
-        <div class="form-group">
-          <label for="nombre">Nombre Completo</label>
-          <input type="text" id="nombre" required placeholder="Ej. Ana García">
+  <!-- POR QUÉ ELEGIRNOS -->
+  <section class="section-padding why-us" id="ventajas">
+    <div class="container">
+      <div class="section-header">
+        <h2>¿Por qué confiar en VitaSalud?</h2>
+        <p>Trabajamos de forma clara e independiente para ofrecerte información neutral y objetiva.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-box">
+          <div class="feature-icon">🔍</div>
+          <h3>Análisis Objetivo</h3>
+          <p>Evaluamos rigurosamente cada programa para garantizar que cumpla con altos estándares de calidad.</p>
         </div>
-        <div class="form-group">
-          <label for="email">Correo Electrónico</label>
-          <input type="email" id="email" required placeholder="tu@email.com">
+        <div class="feature-box">
+          <div class="feature-icon">🛡️</div>
+          <h3>Transparencia Total</h3>
+          <p>Sin letras pequeñas ni costes ocultos. Te informamos de forma clara antes de cualquier decisión.</p>
         </div>
-        <div class="form-group">
-          <label for="servicio">Servicio de Interés</label>
-          <select id="servicio">
-            <option value="nutricion">Nutrición Personalizada</option>
-            <option value="chequeos">Chequeos Preventivos</option>
-            <option value="corporativo">Bienestar Corporativo</option>
-          </select>
+        <div class="feature-box">
+          <div class="feature-icon">💬</div>
+          <h3>Asesoría Gratuita</h3>
+          <p>Nuestros especialistas te guían sin ningún tipo de compromiso para encontrar la mejor solución.</p>
         </div>
-        <button type="submit" class="btn-primary" style="width: 100%;">Enviar Solicitud</button>
-      </form>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- BLOG / GUÍAS DE SALUD (CLAVE PARA APORTAR VALOR REAL) -->
+  <section class="section-padding blog-section" id="blog">
+    <div class="container">
+      <div class="section-header">
+        <h2>Guías e Información de Salud</h2>
+        <p>Artículos explicativos redactados para ayudarte a tomar decisiones informadas sobre tu bienestar.</p>
+      </div>
+
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="blog-content">
+            <span class="blog-tag">Salud Preventiva</span>
+            <h3>¿Qué pruebas incluir en tu chequeo anual según tu edad?</h3>
+            <p>Conoce la importancia de la detección precoz y qué análisis analíticos son clave entre los 20 y los 60 años.</p>
+            <a href="#contacto" class="read-more">Leer artículo completo →</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-content">
+            <span class="blog-tag">Nutrición</span>
+            <h3>Mitos y realidades sobre las dietas antiinflamatorias</h3>
+            <p>Desmontamos los conceptos erróneos más comunes y explicamos qué alimentos cuentan con evidencia científica.</p>
+            <a href="#contacto" class="read-more">Leer artículo completo →</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-content">
+            <span class="blog-tag">Bienestar Laboral</span>
+            <h3>5 Estrategias para reducir la fatiga mental en el trabajo</h3>
+            <p>Consejos prácticos sobre ergonomía, pausas activas y organización del día a día para evitar el agotamiento.</p>
+            <a href="#contacto" class="read-more">Leer artículo completo →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREGUNTAS FRECUENTES (FAQ) -->
+  <section class="section-padding faq-section" id="faq">
+    <div class="container" style="max-width: 800px;">
+      <div class="section-header">
+        <h2>Preguntas Frecuentes</h2>
+        <p>Resolvemos las dudas habituales sobre nuestros servicios de asesoramiento.</p>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">¿El servicio de asesoría de VitaSalud tiene algún coste?</div>
+        <div class="faq-answer">No. Nuestra orientación inicial e informativa para ayudarte a elegir el mejor plan o servicio es 100% gratuita y sin compromiso.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">¿VitaSalud ofrece diagnósticos médicos directos?</div>
+        <div class="faq-answer">No. VitaSalud es un portal divulgativo y de orientación independiente. Para diagnósticos clínicos o prescripciones siempre derivamos a profesionales médicos colegiados.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">¿Cómo se seleccionan los programas o profesionales de la web?</div>
+        <div class="faq-answer">Analizamos la experiencia del equipo, las opiniones de los usuarios, las acreditaciones sanitarias y la relación calidad-precio de los servicios.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULARIO DE CONTACTO -->
+  <section class="section-padding" id="contacto">
+    <div class="container">
+      <div class="section-header">
+        <h2>Solicita una Consulta de Información</h2>
+        <p>Completa el formulario y un especialista en orientación de salud te contactará a la brevedad.</p>
+      </div>
+
+      <div class="contact-container">
+        <form id="contactForm" onsubmit="event.preventDefault(); alert('¡Solicitud enviada con éxito! Un asesor te contactará pronto.'); this.reset();">
+          <div class="form-group">
+            <label for="nombre">Nombre Completo *</label>
+            <input type="text" id="nombre" required placeholder="Ej. María González">
+          </div>
+          <div class="form-group">
+            <label for="email">Correo Electrónico *</label>
+            <input type="email" id="email" required placeholder="tuemail@ejemplo.com">
+          </div>
+          <div class="form-group">
+            <label for="telefono">Teléfono de Contacto</label>
+            <input type="tel" id="telefono" placeholder="+34 600 000 000">
+          </div>
+          <div class="form-group">
+            <label for="interes">Área de Interés Principal</label>
+            <select id="interes">
+              <option value="nutricion">Nutrición y Cambio de Hábitos</option>
+              <option value="chequeo">Chequeos Médicos Preventivos</option>
+              <option value="empresa">Programas para Empresas</option>
+              <option value="otro">Otra consulta general</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="mensaje">¿En qué podemos ayudarte?</label>
+            <textarea id="mensaje" rows="4" placeholder="Escribe aquí tus dudas o detalles adicionales..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width: 100%;">Enviar Solicitud Gratuita</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER Y AVISOS LEGALES (INDISPENSABLES PARA APORBACIÓN EN ADSENSE) -->
   <footer>
-    <p>&copy; 2026 VitaSalud. Todos los derechos reservados. | Portal informativo y de servicios independientes.</p>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>VitaSalud</h3>
+          <p>Portal independiente dedicado a la orientación en bienestar, salud preventiva y selección de servicios sanitarios de calidad.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Secciones</h4>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#comparativa">Comparador</a></li>
+            <li><a href="#ventajas">Ventajas</a></li>
+            <li><a href="#blog">Artículos</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Aviso Legal</a></li>
+            <li><a href="#">Política de Privacidad</a></li>
+            <li><a href="#">Política de Cookies</a></li>
+            <li><a href="#">Términos de Uso</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Contacto</h4>
+          <ul>
+            <li>info@vitasalud-ejemplo.com</li>
+            <li>Atención L-V: 9:00 - 18:00</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        <p><strong>Aviso Médico Legal:</strong> La información contenida en VitaSalud tiene un propósito estrictamente divulgativo e informativo. En ningún caso sustituye la consulta, el diagnóstico o el tratamiento proporcionado por un médico colegiado o un profesional sanitario cualificado. Si experimenta alguna urgencia o síntoma médico, acuda inmediatamente a su centro de salud más cercano.</p>
+        <p style="margin-top: 0.8rem;">© 2026 VitaSalud. Todos los derechos reservados.</p>
+      </div>
+    </div>
   </footer>
 
-  <script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('¡Gracias por tu mensaje! Un asesor te contactará pronto.');
-      this.reset();
-    });
-  </script>
 </body>
 </html>
