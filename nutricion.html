@@ -5,36 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guía Completa de Nutrición y Alimentación Saludable | VitaSalud</title>
   <style>
-    :root {
-      --primary-color: #0d9488;
-      --secondary-color: #1e293b;
-      --bg-light: #f8fafc;
-      --text-main: #334155;
-      --text-muted: #64748b;
-      --border-color: #e2e8f0;
-    }
+    :root { --primary-color: #0d9488; --secondary-color: #1e293b; --bg-light: #f8fafc; --text-main: #334155; --border-color: #e2e8f0; }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
-    body { background-color: var(--bg-light); color: var(--text-main); line-height: 1.7; }
+    body { background-color: var(--bg-light); color: var(--text-main); line-height: 1.8; }
     a { text-decoration: none; color: inherit; }
     .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-    header { background-color: #ffffff; border-bottom: 1px solid var(--border-color); padding: 1rem 0; position: sticky; top: 0; }
+    header { background-color: #ffffff; border-bottom: 1px solid var(--border-color); padding: 1rem 0; position: sticky; top: 0; z-index: 10; }
     .nav-wrapper { display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
     .logo { font-size: 1.5rem; font-weight: 800; color: var(--secondary-color); }
     .logo span { color: var(--primary-color); }
     .btn-back { color: var(--primary-color); font-weight: 600; font-size: 0.95rem; }
     
-    .article-header { padding: 3rem 0 1.5rem 0; text-align: left; border-bottom: 1px solid var(--border-color); margin-bottom: 2rem; }
-    .article-tag { font-size: 0.85rem; color: var(--primary-color); font-weight: 700; text-transform: uppercase; }
-    .article-header h1 { font-size: 2.4rem; color: var(--secondary-color); margin: 0.5rem 0 1rem 0; line-height: 1.3; }
-    .article-meta { font-size: 0.9rem; color: var(--text-muted); }
+    .article-header { padding: 3rem 0 1.5rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 2rem; }
+    .article-tag { font-size: 0.85rem; color: var(--primary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+    .article-header h1 { font-size: 2.5rem; color: var(--secondary-color); margin: 0.5rem 0 1rem 0; line-height: 1.25; }
+    .article-meta { font-size: 0.9rem; color: #64748b; }
 
-    .article-body { background: #ffffff; padding: 2.5rem; border-radius: 10px; border: 1px solid var(--border-color); box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 3rem; }
-    .article-body h2 { color: var(--secondary-color); margin: 1.8rem 0 0.8rem 0; font-size: 1.5rem; }
-    .article-body p { margin-bottom: 1.2rem; color: var(--text-main); font-size: 1.05rem; }
-    .article-body ul { margin: 1rem 0 1.5rem 1.5rem; color: var(--text-main); }
-    .article-body li { margin-bottom: 0.5rem; }
+    .article-body { background: #ffffff; padding: 3rem; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 4px 6px rgba(0,0,0,0.02); margin-bottom: 3rem; }
+    .article-body h2 { color: var(--secondary-color); margin: 2.2rem 0 1rem 0; font-size: 1.6rem; border-bottom: 2px solid #f1f5f9; padding-bottom: 0.4rem; }
+    .article-body h3 { color: var(--secondary-color); margin: 1.5rem 0 0.6rem 0; font-size: 1.2rem; }
+    .article-body p { margin-bottom: 1.2rem; font-size: 1.05rem; }
+    .article-body ul { margin: 1rem 0 1.5rem 1.5rem; font-size: 1.05rem; }
+    .article-body li { margin-bottom: 0.6rem; }
+    
+    .article-image { width: 100%; height: 400px; object-fit: cover; border-radius: 8px; margin: 1.5rem 0 2rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .image-caption { text-align: center; font-size: 0.85rem; color: #64748b; margin-top: -1.5rem; margin-bottom: 2rem; }
 
-    footer { background-color: var(--secondary-color); color: #94a3b8; padding: 2rem 0; text-align: center; font-size: 0.85rem; }
+    .highlight-box { background-color: #f0fdf4; border-left: 4px solid var(--primary-color); padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0; }
+    .highlight-box p { margin-bottom: 0; color: #166534; font-weight: 500; }
+
+    footer { background-color: var(--secondary-color); color: #94a3b8; padding: 2.5rem 0; text-align: center; font-size: 0.9rem; }
   </style>
 </head>
 <body>
@@ -48,36 +48,51 @@
 
   <main class="container">
     <div class="article-header">
-      <span class="article-tag">Guía de Nutrición</span>
-      <h1>Principios de la Nutrición Equilibrada y Cambio de Hábitos</h1>
-      <p class="article-meta">Publicado por el Equipo de VitaSalud | Lectura: 5 min</p>
+      <span class="article-tag">Nutrición y Bienestar</span>
+      <h1>Guía Definitiva de Nutrición Equilibrada y Hábitos Sostenibles</h1>
+      <p class="article-meta">Por el Equipo Editorial de VitaSalud | Actualizado en 2026 | Tiempo de lectura: 7 minutos</p>
     </div>
 
     <article class="article-body">
-      <p>Una alimentación saludable es la base para mantener altos niveles de energía, prevenir enfermedades crónicas y optimizar el rendimiento físico y mental día a día. En esta guía te explicamos de forma sencilla los pilares fundamentales para estructurar tu dieta sin necesidad de recurrir a restricciones extremas.</p>
+      <p>Una alimentación consciente y equilibrada es el cimiento indispensable sobre el que se construye una buena salud física y mental. Lejos de las modas pasajeras o las restricciones severas que prometen resultados milagrosos, la ciencia respalda un enfoque basado en la variedad, la calidad de los nutrientes y la sostenibilidad a largo plazo.</p>
 
-      <h2>1. La Regla del Plato Equilibrado</h2>
-      <p>Para construir comidas nutritivas sin complicarte contando calorías, puedes aplicar la distribución del plato saludable:</p>
+      <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1200&q=80" alt="Alimentos frescos y saludables" class="article-image">
+      <div class="image-caption">Priorizar alimentos frescos y de temporada optimiza la ingesta de micronutrientes esenciales.</div>
+
+      <h2>1. Los Tres Pilares de los Macronutrientes</h2>
+      <p>Para que nuestro organismo funcione con precisión, necesita un aporte adecuado de macronutrientes distribuidos inteligentemente a lo largo del día:</p>
       <ul>
-        <li><strong>50% Verduras y Hortalizas:</strong> Aportan fibra, vitaminas y antioxidantes esenciales.</li>
-        <li><strong>25% Proteínas de Calidad:</strong> Huevos, legumbres, pescados, aves o tofu para mantener la masa muscular.</li>
-        <li><strong>25% Hidratos Complejos:</strong> Arroz integral, avena, patatas o quinoa para obtener energía de liberación lenta.</li>
+        <li><strong>Proteínas:</strong> Esenciales para la reparación de tejidos, el mantenimiento de la masa muscular y la síntesis hormonal. Se encuentran en carnes magras, pescados, huevos, legumbres y opciones vegetales como el tofu.</li>
+        <li><strong>Hidratos de Carbono Complejos:</strong> La principal fuente de energía del cuerpo. Debemos priorizar los integrales (avena, arroz integral, quinoa, patata) frente a los azúcares refinados para evitar picos de glucosa en sangre.</li>
+        <li><strong>Grasas Saludables:</strong> Cruciales para la función cerebral y la absorción de vitaminas liposolubles (A, D, E, K). El aceite de oliva virgen extra, los frutos secos, el aguacate y el pescado azul son excelentes fuentes.</li>
       </ul>
 
-      <h2>2. Mitos Comunes sobre los Alimentos Procesados</h2>
-      <p>Es importante diferenciar entre los alimentos <em>ultraprocesados</em> (bollería, refrescos, comida rápida) y los <em>buenos procesados</em> (conservas de pescado, legumbres cocidas en bote, verduras congeladas). Estos últimos son opciones perfectamente saludables y convenientes para ahorrar tiempo en la cocina.</p>
+      <div class="highlight-box">
+        <p>💡 <strong>Consejo Clave:</strong> No elimines grupos enteros de alimentos a menos que exista un diagnóstico médico específico. El secreto del éxito nutricional radica en la moderación y la variedad.</p>
+      </div>
 
-      <h2>3. La Importancia de la Hidratación</h2>
-      <p>El agua es vital para el correcto funcionamiento del organismo, la digestión y el mantenimiento de la función cognitiva. Se recomienda mantener un consumo constante a lo largo del día, priorizando el agua como bebida principal en lugar de refrescos o zumos azucarados.</p>
+      <h2>2. Mitos Frecuentes sobre los Alimentos Procesados</h2>
+      <p>En la actualidad existe mucha confusión en torno a los alimentos envasados. Es vital aprender a distinguirlos:</p>
+      <ul>
+        <li><strong>Ultraprocesados:</strong> Productos elaborados con ingredientes industriales altamente refinados, azúcares añadidos, grasas de baja calidad y aditivos (bollería industrial, refrescos, precocinados). Su consumo habitual está vinculado a problemas metabólicos.</li>
+        <li><strong>Buenos procesados:</strong> Alimentos que han sufrido una mínima transformación industrial para su conservación pero mantienen intactas sus propiedades nutricionales (como legumbres en tarro cocidas, verduras congeladas o conservas de pescado al natural). Son herramientas excelentes y seguras para el día a día.</li>
+      </ul>
+
+      <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1200&q=80" alt="Plato con verduras y ensalada fresca" class="article-image">
+      <div class="image-caption">La regla visual del plato ayuda a mantener porciones equilibradas sin necesidad de contar calorías estrictamente.</div>
+
+      <h2>3. La Hidratación como Eje Metabólico</h2>
+      <p>El cuerpo humano está compuesto en su mayoría por agua, y una ligera deshidratación puede traducirse instantáneamente en fatiga mental, dolores de cabeza y disminución del rendimiento físico. Se aconseja beber agua de forma regular a lo largo de toda la jornada, convirtiéndola en la bebida de elección principal frente a alternativas azucaradas.</p>
 
       <h2>Conclusión</h2>
-      <p>Adoptar un estilo de vida saludable no consiste en hacer dieta durante unas semanas, sino en construir hábitos sostenibles a largo plazo que disfrutes y puedas mantener en el tiempo.</p>
+      <p>Cuidar de tu nutrición es una inversión directa en tu calidad de vida futura. Pequeños cambios diarios, mantenidos de forma constante, generan resultados profundos y duraderos sin necesidad de someterse a dietas estrictas.</p>
     </article>
   </main>
 
   <footer>
     <div class="container">
-      <p>© 2026 VitaSalud. Portal informativo de bienestar y salud.</p>
+      <p><strong>Aviso:</strong> Contenido puramente informativo y divulgativo. Consulte con un nutricionista o profesional médico colegiado para planes personalizados.</p>
+      <p style="margin-top: 0.5rem;">© 2026 VitaSalud. Todos los derechos reservados.</p>
     </div>
   </footer>
 
