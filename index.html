@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VitaSalud | Asesoría, Comparativa y Portales de Salud Integral</title>
-  <meta name="description" content="Portal independiente de asesoría y comparativa de servicios de salud, programas de nutrición y chequeos preventivos. Encuentra la solución de bienestar ideal para ti.">
+  <title>VitaSalud | Portal Informativo de Salud, Nutrición y Bienestar</title>
+  <meta name="description" content="Portal informativo independiente de salud, guías de nutrición, chequeos preventivos y consejos para mejorar tu estilo de vida.">
   <style>
     /* VARIABLES Y RESETEO */
     :root {
@@ -102,7 +102,7 @@
       font-size: 0.95rem;
       border: none;
       cursor: pointer;
-      transition: background-color 0.2s, transform 0.1s;
+      transition: background-color 0.2s;
       display: inline-block;
       text-align: center;
     }
@@ -119,6 +119,7 @@
       font-weight: 600;
       background: transparent;
       transition: all 0.2s;
+      display: inline-block;
     }
 
     .btn-outline:hover {
@@ -188,7 +189,7 @@
       margin-bottom: 1rem;
     }
 
-    /* SECCIÓN DE SERVICIOS / COMPARATIVA */
+    /* SECCIONES Y TARJETAS */
     .section-padding {
       padding: 4.5rem 0;
     }
@@ -253,19 +254,6 @@
       margin-bottom: 0.8rem;
     }
 
-    .card-price {
-      font-size: 1.8rem;
-      color: var(--primary-color);
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    .card-price span {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      font-weight: 400;
-    }
-
     .card-features {
       list-style: none;
       margin-bottom: 1.8rem;
@@ -287,50 +275,7 @@
       font-weight: bold;
     }
 
-    /* SECCIÓN POR QUÉ ELEGIRNOS */
-    .why-us {
-      background-color: #ffffff;
-      border-top: 1px solid var(--border-color);
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
-    .feature-box {
-      text-align: center;
-      padding: 1.5rem;
-    }
-
-    .feature-icon {
-      width: 60px;
-      height: 60px;
-      background-color: #ccfbf1;
-      color: var(--primary-color);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.2rem auto;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    .feature-box h3 {
-      font-size: 1.2rem;
-      color: var(--secondary-color);
-      margin-bottom: 0.6rem;
-    }
-
-    .feature-box p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-    }
-
-    /* BLOG / ARTÍCULOS INFORMATIVOS (CLAVE PARA ADSENSE) */
+    /* BLOG / ARTÍCULOS INFORMATIVOS */
     .blog-section {
       background-color: var(--bg-light);
     }
@@ -379,6 +324,49 @@
       font-size: 0.9rem;
     }
 
+    /* POR QUÉ LEER VITASALUD */
+    .why-us {
+      background-color: #ffffff;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-box {
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      background-color: #ccfbf1;
+      color: var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.2rem auto;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .feature-box h3 {
+      font-size: 1.2rem;
+      color: var(--secondary-color);
+      margin-bottom: 0.6rem;
+    }
+
+    .feature-box p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
     /* PREGUNTAS FRECUENTES (FAQ) */
     .faq-section {
       background-color: #ffffff;
@@ -393,57 +381,12 @@
       font-size: 1.1rem;
       font-weight: 600;
       color: var(--secondary-color);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
 
     .faq-answer {
       margin-top: 0.8rem;
       color: var(--text-muted);
       font-size: 0.95rem;
-    }
-
-    /* FORMULARIO DE CONTACTO */
-    .contact-container {
-      background: #ffffff;
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 2.5rem;
-      max-width: 650px;
-      margin: 0 auto;
-      box-shadow: var(--shadow-md);
-    }
-
-    .form-group {
-      margin-bottom: 1.2rem;
-    }
-
-    .form-group label {
-      display: block;
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-bottom: 0.4rem;
-      color: var(--secondary-color);
-    }
-
-    .form-group input, 
-    .form-group select, 
-    .form-group textarea {
-      width: 100%;
-      padding: 0.75rem;
-      border: 1px solid var(--border-color);
-      border-radius: 6px;
-      font-size: 0.95rem;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .form-group input:focus, 
-    .form-group select:focus, 
-    .form-group textarea:focus {
-      border-color: var(--primary-color);
     }
 
     /* FOOTER Y AVISOS LEGALES */
@@ -494,16 +437,13 @@
       color: #64748b;
     }
 
-    /* RESPONSIVO */
     @media (max-width: 768px) {
       .hero-grid {
         grid-template-columns: 1fr;
       }
-
       nav ul {
-        display: none; /* Simplificado para móviles */
+        display: none;
       }
-
       .footer-grid {
         grid-template-columns: 1fr;
       }
@@ -519,13 +459,13 @@
       <nav>
         <ul>
           <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#comparativa">Comparador</a></li>
-          <li><a href="#ventajas">Por qué VitaSalud</a></li>
-          <li><a href="#blog">Guías de Salud</a></li>
+          <li><a href="#guias">Guías de Salud</a></li>
+          <li><a href="#temas">Temas Clave</a></li>
+          <li><a href="#nosotros">Por qué Leernos</a></li>
           <li><a href="#faq">Preguntas Frecuentes</a></li>
         </ul>
       </nav>
-      <a href="#contacto" class="btn-primary">Solicitar Asesoría</a>
+      <a href="#guias" class="btn-primary">Explorar Guías</a>
     </div>
   </header>
 
@@ -533,149 +473,100 @@
   <section class="hero" id="inicio">
     <div class="container hero-grid">
       <div class="hero-text">
-        <h1>Asesoría Independiente y Soluciones de Salud a tu Medida</h1>
-        <p>Comparamos y seleccionamos las mejores opciones de atención preventiva, nutrición especializada y planes corporativos para ti y tu familia.</p>
+        <h1>Tu Portal Informativo de Salud, Nutrición y Bienestar</h1>
+        <p>Aprende a cuidar tu salud con información clara, guías de nutrición basadas en evidencia y hábitos para un estilo de vida saludable.</p>
         <div style="display: flex; gap: 1rem; align-items: center;">
-          <a href="#comparativa" class="btn-primary">Ver Comparativa</a>
-          <a href="#ventajas" class="btn-outline">Cómo Funciona</a>
+          <a href="#guias" class="btn-primary">Ver Últimas Guías</a>
+          <a href="#nosotros" class="btn-outline">Conoce el Portal</a>
         </div>
         <div class="stats-bar">
           <div class="stat-item">
-            <h4>+12.000</h4>
-            <p>Usuarios asesorados</p>
-          </div>
-          <div class="stat-item">
             <h4>100%</h4>
-            <p>Análisis independiente</p>
+            <p>Contenido gratuito</p>
           </div>
           <div class="stat-item">
-            <h4>4.9/5</h4>
-            <p>Valoración promedio</p>
+            <h4>+50</h4>
+            <p>Guías informativas</p>
+          </div>
+          <div class="stat-item">
+            <h4>Divulgación</h4>
+            <p>Basada en evidencia</p>
           </div>
         </div>
       </div>
       
       <div class="hero-card">
-        <h3>Encuentra la mejor opción en 2 minutos</h3>
-        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.2rem;">Responde unas breves preguntas para recibir una recomendación personalizada sin compromiso.</p>
-        <form onsubmit="event.preventDefault(); alert('Gracias. Un asesor revisará tu perfil.');">
-          <div class="form-group">
-            <label>¿Qué servicio buscas?</label>
-            <select required>
-              <option value="">Selecciona una opción</option>
-              <option value="nutricion">Plan de Nutrición y Hábitos</option>
-              <option value="preventivo">Chequeos Preventivos Integrales</option>
-              <option value="empresa">Bienestar para Empresas</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Rango de edad</label>
-            <select required>
-              <option value="18-30">18 - 30 años</option>
-              <option value="31-50">31 - 50 años</option>
-              <option value="50+">Más de 50 años</option>
-            </select>
-          </div>
-          <button type="submit" class="btn-primary" style="width: 100%;">Comparar Ahora</button>
-        </form>
+        <h3>¿Qué tema deseas explorar hoy?</h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.2rem;">Selecciona una categoría de interés para acceder directamente a nuestras guías recomendadas:</p>
+        <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+          <a href="#guias" class="btn-outline" style="text-align: center;">🥗 Nutrición y Alimentación</a>
+          <a href="#guias" class="btn-outline" style="text-align: center;">🩺 Chequeos y Salud Preventiva</a>
+          <a href="#guias" class="btn-outline" style="text-align: center;">🧘 Bienestar y Estilo de Vida</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- COMPARATIVA DE PLANES Y SERVICIOS -->
-  <section class="section-padding" id="comparativa">
+  <!-- SECCIÓN DE CATEGORÍAS Y GUÍAS DE SALUD -->
+  <section class="section-padding" id="temas">
     <div class="container">
       <div class="section-header">
-        <h2>Planes y Soluciones Destacadas</h2>
-        <p>Analizamos las alternativas más completas del sector para ofrecerte una visión clara, transparente y adaptada a tus necesidades individuales.</p>
+        <h2>Áreas de Salud y Bienestar</h2>
+        <p>Explora nuestras áreas de estudio redactadas para responder a las preguntas más frecuentes sobre el cuidado personal.</p>
       </div>
 
       <div class="cards-grid">
-        <!-- Tarjeta 1 -->
         <div class="card">
-          <span class="badge">MÁS POPULAR</span>
+          <span class="badge">POPULAR</span>
           <div>
-            <h3 class="card-title">Nutrición & Estilo de Vida</h3>
-            <div class="card-price">Desde 29€ <span>/ mes</span></div>
+            <h3 class="card-title">Nutrición y Dieta</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">Aprende a estructurar tus menús diarios, comprender los macronutrientes y adoptar hábitos sostenibles.</p>
             <ul class="card-features">
-              <li>Valoración nutricional inicial completa</li>
-              <li>Diseño de menús 100% personalizados</li>
-              <li>Seguimiento bisemanal con especialista</li>
-              <li>Acceso a app de recetas y hábitos</li>
+              <li>Mitos sobre alimentos procesados</li>
+              <li>Guías para dietas equilibradas</li>
+              <li>Planes de hidratación efectiva</li>
             </ul>
           </div>
-          <a href="#contacto" class="btn-primary">Solicitar Información</a>
+          <a href="#guias" class="btn-primary">Leer Guías de Nutrición</a>
         </div>
 
-        <!-- Tarjeta 2 -->
         <div class="card">
           <span class="badge" style="background-color: #0284c7;">PREVENCIÓN</span>
           <div>
-            <h3 class="card-title">Chequeo Preventivo Pro</h3>
-            <div class="card-price">Desde 149€ <span>/ evaluación</span></div>
+            <h3 class="card-title">Salud Preventiva</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">Información sobre análisis de sangre, revisiones médicas recomendadas y signos tempranos de alerta.</p>
             <ul class="card-features">
-              <li>Analítica de sangre y perfil metabólico</li>
-              <li>Evaluación cardiovascular preventiva</li>
-              <li>Informe médico detallado e interpretado</li>
-              <li>Consulta de cierre con médico general</li>
+              <li>Valores clave en una analítica</li>
+              <li>Importancia de los chequeos por edad</li>
+              <li>Prevención cardiovascular</li>
             </ul>
           </div>
-          <a href="#contacto" class="btn-outline">Ver Detalle del Plan</a>
+          <a href="#guias" class="btn-outline">Ver Artículos de Salud</a>
         </div>
 
-        <!-- Tarjeta 3 -->
         <div class="card">
-          <span class="badge" style="background-color: #4f46e5;">EMPRESAS</span>
+          <span class="badge" style="background-color: #4f46e5;">ESTILO DE VIDA</span>
           <div>
-            <h3 class="card-title">Bienestar Corporativo</h3>
-            <div class="card-price">A medida <span>/ equipo</span></div>
+            <h3 class="card-title">Descanso y Hábitos</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">Estrategias sencillas para mejorar la higiene del sueño, reducir el estrés cotidiano y optimizar tu energía.</p>
             <ul class="card-features">
-              <li>Talleres de gestión del estrés y ergonomía</li>
-              <li>Campañas de vacunación e higiene postural</li>
-              <li>Planes de nutrición para empleados</li>
-              <li>Métricas de impacto y reducción de bajas</li>
+              <li>Higiene del sueño y ritmos circadianos</li>
+              <li>Gestión de la fatiga laboral</li>
+              <li>Ejercicio para la vida diaria</li>
             </ul>
           </div>
-          <a href="#contacto" class="btn-primary">Pedir Presupuesto</a>
+          <a href="#guias" class="btn-primary">Explorar Consejos</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- POR QUÉ ELEGIRNOS -->
-  <section class="section-padding why-us" id="ventajas">
+  <!-- BLOG / ARTÍCULOS DESTACADOS (DONDE IRÁN LOS ANUNCIOS DE ADSENSE) -->
+  <section class="section-padding blog-section" id="guias">
     <div class="container">
       <div class="section-header">
-        <h2>¿Por qué confiar en VitaSalud?</h2>
-        <p>Trabajamos de forma clara e independiente para ofrecerte información neutral y objetiva.</p>
-      </div>
-
-      <div class="features-grid">
-        <div class="feature-box">
-          <div class="feature-icon">🔍</div>
-          <h3>Análisis Objetivo</h3>
-          <p>Evaluamos rigurosamente cada programa para garantizar que cumpla con altos estándares de calidad.</p>
-        </div>
-        <div class="feature-box">
-          <div class="feature-icon">🛡️</div>
-          <h3>Transparencia Total</h3>
-          <p>Sin letras pequeñas ni costes ocultos. Te informamos de forma clara antes de cualquier decisión.</p>
-        </div>
-        <div class="feature-box">
-          <div class="feature-icon">💬</div>
-          <h3>Asesoría Gratuita</h3>
-          <p>Nuestros especialistas te guían sin ningún tipo de compromiso para encontrar la mejor solución.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BLOG / GUÍAS DE SALUD (CLAVE PARA APORTAR VALOR REAL) -->
-  <section class="section-padding blog-section" id="blog">
-    <div class="container">
-      <div class="section-header">
-        <h2>Guías e Información de Salud</h2>
-        <p>Artículos explicativos redactados para ayudarte a tomar decisiones informadas sobre tu bienestar.</p>
+        <h2>Guías y Artículos Informativos</h2>
+        <p>Contenido amplio y didáctico diseñado para ofrecer respuestas claras a tus dudas de salud.</p>
       </div>
 
       <div class="blog-grid">
@@ -684,7 +575,7 @@
             <span class="blog-tag">Salud Preventiva</span>
             <h3>¿Qué pruebas incluir en tu chequeo anual según tu edad?</h3>
             <p>Conoce la importancia de la detección precoz y qué análisis analíticos son clave entre los 20 y los 60 años.</p>
-            <a href="#contacto" class="read-more">Leer artículo completo →</a>
+            <a href="#" class="read-more">Leer artículo completo →</a>
           </div>
         </article>
 
@@ -693,7 +584,7 @@
             <span class="blog-tag">Nutrición</span>
             <h3>Mitos y realidades sobre las dietas antiinflamatorias</h3>
             <p>Desmontamos los conceptos erróneos más comunes y explicamos qué alimentos cuentan con evidencia científica.</p>
-            <a href="#contacto" class="read-more">Leer artículo completo →</a>
+            <a href="#" class="read-more">Leer artículo completo →</a>
           </div>
         </article>
 
@@ -702,9 +593,37 @@
             <span class="blog-tag">Bienestar Laboral</span>
             <h3>5 Estrategias para reducir la fatiga mental en el trabajo</h3>
             <p>Consejos prácticos sobre ergonomía, pausas activas y organización del día a día para evitar el agotamiento.</p>
-            <a href="#contacto" class="read-more">Leer artículo completo →</a>
+            <a href="#" class="read-more">Leer artículo completo →</a>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUÉ LEER VITASALUD -->
+  <section class="section-padding why-us" id="nosotros">
+    <div class="container">
+      <div class="section-header">
+        <h2>Un Portal de Divulgación Claro e Independiente</h2>
+        <p>Nuestro compromiso es acercar la información sobre hábitos saludables de forma sencilla e inteligible.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-box">
+          <div class="feature-icon">📖</div>
+          <h3>Lógica y Sencillez</h3>
+          <p>Explicamos conceptos complejos de nutrición y salud en un lenguaje cercano para cualquier persona.</p>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon">🛡️</div>
+          <h3>Sin Intereses Ocultos</h3>
+          <p>Ofrecemos información neutral redactada con fines puramente informativos y educativos.</p>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon">Acceso</div>
+          <h3>100% Libre y Gratuito</h3>
+          <p>Todos nuestros artículos y guías están disponibles de forma abierta sin registros ni suscripciones.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -714,63 +633,22 @@
     <div class="container" style="max-width: 800px;">
       <div class="section-header">
         <h2>Preguntas Frecuentes</h2>
-        <p>Resolvemos las dudas habituales sobre nuestros servicios de asesoramiento.</p>
+        <p>Respuestas sobre el funcionamiento de nuestro portal de contenidos.</p>
       </div>
 
       <div class="faq-item">
-        <div class="faq-question">¿El servicio de asesoría de VitaSalud tiene algún coste?</div>
-        <div class="faq-answer">No. Nuestra orientación inicial e informativa para ayudarte a elegir el mejor plan o servicio es 100% gratuita y sin compromiso.</div>
+        <div class="faq-question">¿El contenido de VitaSalud es gratuito?</div>
+        <div class="faq-answer">Sí. Toda la información publicada en VitaSalud es de libre acceso y está pensada como recurso educativo.</div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-question">¿VitaSalud ofrece diagnósticos médicos directos?</div>
-        <div class="faq-answer">No. VitaSalud es un portal divulgativo y de orientación independiente. Para diagnósticos clínicos o prescripciones siempre derivamos a profesionales médicos colegiados.</div>
+        <div class="faq-question">¿Los artículos reemplazan una consulta médica?</div>
+        <div class="faq-answer">En ningún caso. VitaSalud es un sitio divulgativo. Ante cualquier dolencia, síntoma o tratamiento, debe acudir siempre a un profesional sanitario colegiado.</div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-question">¿Cómo se seleccionan los programas o profesionales de la web?</div>
-        <div class="faq-answer">Analizamos la experiencia del equipo, las opiniones de los usuarios, las acreditaciones sanitarias y la relación calidad-precio de los servicios.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FORMULARIO DE CONTACTO -->
-  <section class="section-padding" id="contacto">
-    <div class="container">
-      <div class="section-header">
-        <h2>Solicita una Consulta de Información</h2>
-        <p>Completa el formulario y un especialista en orientación de salud te contactará a la brevedad.</p>
-      </div>
-
-      <div class="contact-container">
-        <form id="contactForm" onsubmit="event.preventDefault(); alert('¡Solicitud enviada con éxito! Un asesor te contactará pronto.'); this.reset();">
-          <div class="form-group">
-            <label for="nombre">Nombre Completo *</label>
-            <input type="text" id="nombre" required placeholder="Ej. María González">
-          </div>
-          <div class="form-group">
-            <label for="email">Correo Electrónico *</label>
-            <input type="email" id="email" required placeholder="tuemail@ejemplo.com">
-          </div>
-          <div class="form-group">
-            <label for="telefono">Teléfono de Contacto</label>
-            <input type="tel" id="telefono" placeholder="+34 600 000 000">
-          </div>
-          <div class="form-group">
-            <label for="interes">Área de Interés Principal</label>
-            <select id="interes">
-              <option value="nutricion">Nutrición y Cambio de Hábitos</option>
-              <option value="chequeo">Chequeos Médicos Preventivos</option>
-              <option value="empresa">Programas para Empresas</option>
-              <option value="otro">Otra consulta general</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="mensaje">¿En qué podemos ayudarte?</label>
-            <textarea id="mensaje" rows="4" placeholder="Escribe aquí tus dudas o detalles adicionales..."></textarea>
-          </div>
-          <button type="submit" class="btn-primary" style="width: 100%;">Enviar Solicitud Gratuita</button>
-        </form>
+        <div class="faq-question">¿Con qué frecuencia se actualizan las guías?</div>
+        <div class="faq-answer">Publicamos y revisamos nuestros contenidos de forma periódica para ofrecer información clara y actualizada.</div>
       </div>
     </div>
   </section>
@@ -781,37 +659,36 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <h3>VitaSalud</h3>
-          <p>Portal independiente dedicado a la orientación en bienestar, salud preventiva y selección de servicios sanitarios de calidad.</p>
+          <p>Portal educativo e informativo sobre salud, nutrición, hábitos saludables y bienestar integral.</p>
         </div>
         <div class="footer-links">
-          <h4>Secciones</h4>
+          <h4>Navegación</h4>
           <ul>
             <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#comparativa">Comparador</a></li>
-            <li><a href="#ventajas">Ventajas</a></li>
-            <li><a href="#blog">Artículos</a></li>
+            <li><a href="#guias">Guías de Salud</a></li>
+            <li><a href="#temas">Temas</a></li>
+            <li><a href="#nosotros">Por qué leernos</a></li>
           </ul>
         </div>
         <div class="footer-links">
           <h4>Legal</h4>
           <ul>
-            <li><a href="#">Aviso Legal</a></li>
-            <li><a href="#">Política de Privacidad</a></li>
-            <li><a href="#">Política de Cookies</a></li>
-            <li><a href="#">Términos de Uso</a></li>
+            <li><a href="aviso-legal.html">Aviso Legal</a></li>
+            <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
+            <li><a href="politica-cookies.html">Política de Cookies</a></li>
           </ul>
         </div>
         <div class="footer-links">
           <h4>Contacto</h4>
           <ul>
             <li>info@vitasalud-ejemplo.com</li>
-            <li>Atención L-V: 9:00 - 18:00</li>
+            <li>Contacto editorial</li>
           </ul>
         </div>
       </div>
 
       <div class="disclaimer">
-        <p><strong>Aviso Médico Legal:</strong> La información contenida en VitaSalud tiene un propósito estrictamente divulgativo e informativo. En ningún caso sustituye la consulta, el diagnóstico o el tratamiento proporcionado por un médico colegiado o un profesional sanitario cualificado. Si experimenta alguna urgencia o síntoma médico, acuda inmediatamente a su centro de salud más cercano.</p>
+        <p><strong>Aviso Médico Legal:</strong> La información contenida en VitaSalud tiene un propósito estrictamente divulgativo e informativo. En ningún caso sustituye la consulta, el diagnóstico o el tratamiento proporcionado por un médico colegiado o un profesional sanitario cualificado. Si experimenta alguna urgencia médica, acuda de inmediato a su centro de salud.</p>
         <p style="margin-top: 0.8rem;">© 2026 VitaSalud. Todos los derechos reservados.</p>
       </div>
     </div>
